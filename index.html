@@ -1383,18 +1383,20 @@
                 <input type="text" id="searchInput" placeholder="搜尋商品..." />
                 <select id="categorySelect">
                     <option value="">所有分類</option>
-                    <option value="肉品">肉品</option>
-                    <option value="海鮮">海鮮</option>
-                    <option value="主菜">主菜</option>
+                    <option value="雞肉">雞肉</option>
+                    <option value="牛肉">牛肉</option>
+                    <option value="豬肉">豬肉</option>
                     <option value="湯品">湯品</option>
+                    <option value="鮮食">鮮食</option>
                 </select>
             </div>
             <div class="category-buttons">
                 <button class="active" data-cat="">全部</button>
-                <button data-cat="肉品">肉品</button>
-                <button data-cat="海鮮">海鮮</button>
-                <button data-cat="主菜">主菜</button>
+                <button data-cat="雞肉">雞肉</button>
+                <button data-cat="牛肉">牛肉</button>
+                <button data-cat="豬肉">豬肉</button>
                 <button data-cat="湯品">湯品</button>
+                <button data-cat="鮮食">鮮食</button>
             </div>
             <div class="menu-grid" id="menuItems"></div>
         </section>
@@ -1410,7 +1412,7 @@
                 <input type="hidden" name="_autoresponse" value="感謝您的訂購！我們將於 1-2 日內透過 Line（ID: @FoodParadise）聯繫您確認付款與取貨。&#x0A;&#x0A;--- 訂單詳情 ---&#x0A;{{cart}}&#x0A;總金額: NT${{total}}&#x0A;&#x0A;--- 聯絡資訊 ---&#x0A;姓名: {{name}}&#x0A;Email: {{email}}&#x0A;電話: {{phone}}&#x0A;取貨方式: {{pickup_method}}&#x0A;{{store_name_display}}備註: {{notes}}&#x0A;&#x0A;期待您的光臨！">
                 <input type="hidden" name="total" id="total-data">
                  <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0AoqUcHHhNvCSRPwVpZ4fQ6NRqnZH5KDQYA&s">
+                <input type="hidden" name="_next" value="咖哩牛頰">
                 <div class="form-group">
                     <label for="name">姓名:</label>
                     <input type="text" id="name" name="name" required placeholder="請輸入您的姓名">
@@ -1481,15 +1483,22 @@
     <script>
         // 產品資料
         const products = [
-            { id: 1, name: "原味舒肥雞胸", category: "肉品", price: 150, desc: "滋嫩多肉，美味可口。採用低溫慢煮技術，完整保留雞肉的鮮甜與營養，口感軟嫩多汁，是健康飲食的絕佳選擇。", img: "images/1.jpg" },
-            { id: 2, name: "舒肥義式香料雞翅", category: "肉品", price: 250, desc: "低脂高蛋白的健康首選。以多種義式香料醃製，風味獨特，搭配舒肥烹調，肉質鮮嫩入味，令人回味無窮。", img: "images/2.jpg" },
-            { id: 3, name: "麻油松阪豬", category: "湯品", price: 120, desc: "香氣逼人，肉質鮮嫩順口。嚴選松阪豬肉，以傳統麻油烹調，香氣四溢，肉質彈牙不膩，是暖身滋補的美味。", img: "images/3.jpg" },
-            { id: 4, name: "去骨油雞腿", category: "肉品", price: 80, desc: "口感Q彈，肉質紮實。精選去骨雞腿，以獨家秘方滷製，皮Q肉嫩，香氣撲鼻，是餐桌上的經典美味。", img: "images/4.jpg" },
-            { id: 5, name: "蘑菇奶油雞", category: "主菜", price: 110, desc: "特調奶油醬，口感豐滿。鮮嫩雞肉與新鮮蘑菇完美結合，搭配濃郁奶油醬汁，口感滑順，香氣四溢。", img: "images/5.jpg" },
-            { id: 6, name: "美國干貝", category: "海鮮", price: 280, desc: "鮮嫩多汁，特製醬汁。來自美國的頂級干貝，肉質飽滿，鮮甜多汁，簡單烹調即可品嚐其原始美味，搭配特製醬汁更添風味。", img: "images/6.jpg" },
-            { id: 7, name: "咖哩牛頰", category: "主菜", price: 180, desc: "肉Q彈美味，豐富纖維", img: "images/7.jpg" },
-            { id: 8, name: "牛丼", category: "主菜", price: 90, desc: "鮮嫩多汁，特製醬汁", img: "images/8.jpg" },
-            { id: 9, name: "番茄牛腱", category: "肉品", price: 100, desc: "慢燉洋蔥的香甜與濃郁起司的結合，口感豐富，溫暖開胃，是法式料理的經典開胃菜。", img: "images/9.jpg" },
+            { id: 1, name: "原味舒肥雞胸", category: "雞肉", price: 79, desc: "鮮嫩多汁，雞胸界的溫柔小鮮肉！😋 簡單清爽，百搭萬能，健身族的最愛！<p>（重量180+-10g)</p>", img: "原味雞胸.jpg" },
+            { id: 2, name: "匈牙利紅椒舒肥雞胸", category: "雞肉", price: 79, desc: "紅椒香氣撲鼻，微辣誘惑你的味蕾！🌶️ 舒肥雞胸，軟嫩到讓你心動！<p>（重量180+-10g)</p>", img: "匈牙利紅椒雞胸.jpg" },
+            { id: 3, name: "義式香料舒肥雞胸", category: "雞肉", price:79, desc: "羅勒勾起的義式浪漫！🍃 雞胸嫩滑，彷彿置身托斯卡尼的午後！（重量180+-10g)", img: "義式香料舒肥雞胸.jpg" },
+            { id: 4, name: "去骨油雞腿", category: "雞肉", price: 230, desc: "油亮誘人，入口即化的雞腿皇！😍 貼心去骨設計，輕鬆吃到吮指回味！<p>（重量600g)</p>", img: "去骨油雞腿.jpg" },
+            { id: 5, name: "去骨醉雞腿", category: "雞肉", price: 230, desc: "酒香四溢，雞腿醉了你也醉了！🍷 貼心去骨設計，美味直接送到嘴邊！<p>（重量600g)</p>", img: "去骨醉雞腿.jpg" },
+            { id: 6, name: "紅酒燉牛頰", category: "牛肉", price: 145, desc: "紅酒慢燉，牛頰軟爛如雲朵！🍇 濃郁香醇，浪漫晚餐的秘密武器！<p>（重量300g)</p>", img: "紅酒燉牛頰.jpg" },
+            { id: 7, name: "咖哩牛頰", category: "牛肉", price: 145, desc: "濃厚咖哩香，牛頰入口即化！🌴 咖哩香氣十足，暖胃又暖心的大滿足！<p>（重量300g)</p>", img: "咖哩牛頰.jpg" },
+            { id: 8, name: "日式醬燒松阪豬", category: "豬肉", price: 185, desc: "醬香濃郁，松阪豬Q彈有嚼勁！🍱 日式風情，咬一口就想喊「歐以系」！<p>（重量250g)</p>", img: "日式醬燒松阪豬.jpg" },
+            { id: 9, name: "韓式辣味松阪豬", category: "豬肉", price: 185, desc: "韓式辣醬超帶勁，松阪豬辣到過癮！🔥 Q彈美味，追劇下飯神器！<p>（重量250g)</p>", img: "韓式辣味松阪豬.jpg" },
+            { id: 10, name: "麻油松阪豬", category: "豬肉", price: 125, desc: "麻油香氣撲鼻，松阪豬暖身又暖心！🫕 滋補美味，冬天必備的幸福味！<p>（重量300g)</p>", img: "麻油松阪豬.jpg" },
+            { id: 11, name: "橙汁排骨", category: "豬肉", price: 120, desc: "橙香四溢，排骨酸甜超開胃！🍊 軟嫩多汁，咬一口滿嘴陽光滋味！<p>（重量200g)</p>", img: "橙汁排骨.jpg" },
+            { id: 12, name: "剝皮辣椒雞湯", category: "湯品", price: 125, desc: "剝皮辣椒微辣香，雞湯暖胃又養身！🌶️ 濃郁鮮甜，喝一口幸福爆棚！<p>（重量320g)</p>", img: "剝皮辣椒雞湯.jpg" },
+            { id: 13, name: "百花羹湯", category: "湯品", price: 120, desc: "花香四溢，羹湯濃郁滑順！🌸 暖心暖胃，彷彿置身花園的幸福湯！<p>（重量300g)</p>", img: "百花羹.jpg" },
+            { id: 14, name: "鮑魚雞湯", category: "湯品", price: 800, desc: "鮑魚奢華加持，雞湯鮮香無敵！🦪 滋補養生，喝一口就像貴族享受！<p>（重量3000g)</p>", img: "鮑魚雞湯.jpg" },
+            { id: 15, name: "蝦仁漿", category: "鮮食", price: 310, desc: "鮮嫩蝦仁漿，濃縮海味精華！🦑 滑順多用，煮湯、火鍋都超有料！<p>（重量600g)</p>", img: "蝦仁漿.jpg" },
+            { id: 15, name: "冷凍大白蝦", category: "鮮食", price: 320, desc: "14隻大白蝦，Q彈鮮甜超滿足！🦐 簡單烹調，秒變海鮮大餐的焦點！", img: "冷凍大白蝦.jpg" },
         ];
 
         // 購物車資料 (使用 localStorage 模擬持久化)
