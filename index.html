@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -1412,7 +1413,7 @@
                 <input type="hidden" name="_autoresponse" value="感謝您的訂購！我們將於 1-2 日內透過 Line（ID: @FoodParadise）聯繫您確認付款與取貨。&#x0A;&#x0A;--- 訂單詳情 ---&#x0A;{{cart}}&#x0A;總金額: NT${{total}}&#x0A;&#x0A;--- 聯絡資訊 ---&#x0A;姓名: {{name}}&#x0A;Email: {{email}}&#x0A;電話: {{phone}}&#x0A;取貨方式: {{pickup_method}}&#x0A;{{store_name_display}}備註: {{notes}}&#x0A;&#x0A;期待您的光臨！">
                 <input type="hidden" name="total" id="total-data">
                  <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0AoqUcHHhNvCSRPwVpZ4fQ6NRqnZH5KDQYA&s">
+                <input type="hidden" name="_next" value="https://www.canva.com/design/DAGsqdzWhJc/KYUsNPa37e6JzYXsQdGN4Q/view?utm_content=DAGsqdzWhJc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0f4b366331">
                 <div class="form-group">
                     <label for="name">姓名:</label>
                     <input type="text" id="name" name="name" required placeholder="請輸入您的姓名">
@@ -1792,21 +1793,7 @@
                 }
             });
 
-            // 清空購物車按鈕事件 - 已移除
-            // clearCartBtn.addEventListener('click', () => {
-            //     if (Object.keys(cart).length === 0) {
-            //         showMessage('購物車為空', '您的購物車是空的，無需清空。');
-            //         return;
-            //     }
-            //     showMessage(
-            //         '清空購物車',
-            //         '您確定要清空購物車中的所有商品嗎？此操作無法復原。',
-            //         performClearCart, // 確認後執行的回呼函數
-            //         '確認清空' // 確認按鈕的文字
-            //     );
-            // });
-
-            // 取貨方式 radio 按鈕點擊事件
+      
             pickupMethodRadios.forEach(radio => {
                 radio.addEventListener('change', function() {
                     if (this.checked) {
@@ -1862,7 +1849,7 @@
                 // 所有驗證通過，顯示成功訊息，然後在用戶點擊確定後提交表單
                 showMessage(
                     '訂單已提交',
-                    '您的訂單已成功提交！我們將盡快處理。',
+                    '您的訂單已成功提交！可在line與我們連絡哦~我們將盡快處理。',
                     () => {
                         // 這個回呼函數在用戶點擊成功訊息的「確定」按鈕時執行
                         // 現在，以程式方式提交表單，這將導致頁面重定向到 FormSubmit.co
