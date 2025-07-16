@@ -1025,13 +1025,13 @@
             <div class="menu-grid" id="menuItems"></div>
         </section>
 
-        <section id="cart">
+       <section id="cart">
             <h2>🛒 購物車</h2>
             <div id="cartList"></div>
             <div class="cart-total" id="total">總金額：NT$0</div>
             <form id="checkout-form" method="POST" action="https://formsubmit.co/Loveshihwen99@gmail.com">
-                <input type="hidden" name="_subject" value="愛上偉哥美食料理新訂單">
-                <input type="hidden" name="_autoresponse" value="感謝您的訂購！我們將於 1-2 日內透過 Line（ID: @FoodParadise）聯繫您確認付款與取貨。
+    <input type="hidden" name="_subject" value="美食天堂新訂單">
+    <input type="hidden" name="_autoresponse" value="感謝您的訂購！我們將於 1-2 日內透過 Line（ID: @FoodParadise）聯繫您確認付款與取貨。
 
 --- 訂單詳情 ---
 {{cart}}
@@ -1045,39 +1045,39 @@ Email: {{email}}
 {{store_name_display}}備註: {{notes}}
 
 期待您的光臨！">
-                <input type="hidden" name="total" id="total-data">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://www.canva.com/design/DAGsqdzWhJc/KYUsNPa37e6JzYXsQdGN4Q/view?utm_content=DAGsqdzWhJc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0f4b366331">
-                <div class="form-group">
-                    <label for="name">姓名:</label>
-                    <input type="text" id="name" name="name" required placeholder="請輸入您的姓名">
-                </div>
-                <div class="form-group">
-                    <label for="phone">電話:</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="請輸入您的電話">
-                </div>
-                <div class="pickup-options">
-                    <label>取貨方式:</label>
-                    <div class="pickup-buttons" id="pickupMethodButtons">
-                        <input type="radio" id="pickup-self" name="pickup_method" value="自取" class="hidden-radio">
-                        <label for="pickup-self">自取</label>
-                        <input type="radio" id="pickup-convenience" name="pickup_method" value="超商取貨" class="hidden-radio">
-                        <label for="pickup-convenience">超商取貨</label>
-                    </div>
-                    <input type="hidden" name="pickup_method" id="pickup-method-data" required>
-                    <input type="hidden" name="store_name_display" id="store-name-display">
-                    <div id="convenienceStoreInfo" class="form-group" style="display: none; margin-top: 20px;">
-                        <label for="store-name">超商門市資訊 (7-11):</label>
-                        <input type="text" id="store-name" name="store_name" placeholder="請輸入7-11門市名稱或店號">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="notes">備註:</label>
-                    <textarea id="notes" name="notes" rows="4" placeholder="請輸入取貨方式或其他備註"></textarea>
-                </div>
-                <input type="hidden" name="cart" id="cart-data">
-                <button type="submit">提交訂單</button>
-            </form>
+    <input type="hidden" name="total" id="total-data">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://www.canva.com/design/DAGsqdzWhJc/KYUsNPa37e6JzYXsQdGN4Q/view?utm_content=DAGsqdzWhJc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0f4b366331">
+    <div class="form-group">
+        <label for="name">姓名:</label>
+        <input type="text" id="name" name="name" required placeholder="請輸入您的姓名">
+    </div>
+    <div class="form-group">
+        <label for="phone">電話:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="請輸入您的電話">
+    </div>
+    <div class="pickup-options">
+        <label>取貨方式:</label>
+        <div class="pickup-buttons" id="pickupMethodButtons">
+            <input type="radio" id="pickup-self" name="pickup_method" value="自取" class="hidden-radio">
+            <label for="pickup-self">自取</label>
+            <input type="radio" id="pickup-convenience" name="pickup_method" value="超商取貨" class="hidden-radio">
+            <label for="pickup-convenience">超商取貨</label>
+        </div>
+        <input type="hidden" name="pickup_method" id="pickup-method-data" required>
+        <input type="hidden" name="store_name_display" id="store-name-display">
+        <div id="convenienceStoreInfo" class="form-group" style="display: none; margin-top: 20px;">
+            <label for="store-name">超商門市資訊 (7-11):</label>
+            <input type="text" id="store-name" name="store_name" placeholder="請輸入7-11門市名稱或店號">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="notes">備註:</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="有任何問題歡迎留言"></textarea>
+    </div>
+    <input type="hidden" name="cart" id="cart-data">
+    <button type="submit">提交訂單</button>
+</form>
         </section>
     </main>
 
@@ -1389,7 +1389,7 @@ Email: {{email}}
                 body: formData,
                 mode: 'no-cors'
             }).then(() => {
-                hideLoading();
+                hideLoading(); // 移除載入指示器
                 showMessage('成功', '訂單已提交！請耐心等待我們的回覆。', () => {
                     cart = {};
                     saveCart();
@@ -1400,7 +1400,7 @@ Email: {{email}}
                     convenienceStoreInfoDiv.style.display = 'none';
                 });
             }).catch(error => {
-                hideLoading();
+                hideLoading(); // 移除載入指示器
                 showMessage('錯誤', '提交訂單時發生錯誤，請稍後再試。');
                 console.error('Error:', error);
             });
