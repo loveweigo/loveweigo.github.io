@@ -1031,20 +1031,7 @@
             <div class="cart-total" id="total">總金額：NT$0</div>
             <form id="checkout-form" method="POST" action="https://formsubmit.co/Loveshihwen99@gmail.com">
     <input type="hidden" name="_subject" value="美食天堂新訂單">
-    <input type="hidden" name="_autoresponse" value="感謝您的訂購！我們將於 1-2 日內透過 Line（ID: @FoodParadise）聯繫您確認付款與取貨。
-
---- 訂單詳情 ---
-{{cart}}
-總金額: NT${{total}}
-
---- 聯絡資訊 ---
-姓名: {{name}}
-Email: {{email}}
-電話: {{phone}}
-取貨方式: {{pickup_method}}
-{{store_name_display}}備註: {{notes}}
-
-期待您的光臨！">
+    <input type="hidden" name="_autoresponse" value="感謝您的訂購！我們將於 1-2 日內透過 Line（ID: @FoodParadise）聯繫您確認付款與取貨。">
     <input type="hidden" name="total" id="total-data">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://www.canva.com/design/DAGsqdzWhJc/KYUsNPa37e6JzYXsQdGN4Q/view?utm_content=DAGsqdzWhJc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0f4b366331">
@@ -1073,7 +1060,7 @@ Email: {{email}}
     </div>
     <div class="form-group">
         <label for="notes">備註:</label>
-        <textarea id="notes" name="notes" rows="4" placeholder="有任何問題歡迎留言"></textarea>
+        <textarea id="notes" name="notes" rows="4" placeholder="請輸入取貨方式或其他備註"></textarea>
     </div>
     <input type="hidden" name="cart" id="cart-data">
     <button type="submit">提交訂單</button>
@@ -1107,9 +1094,8 @@ Email: {{email}}
     <script>
         // 產品資料
         const products = [
-            { id: 1, name: "原味舒肥雞胸", category: "雞肉", price: 79, desc: "鮮嫩多汁，雞胸界的溫柔小鮮肉！😋 簡單清爽，百搭萬能，健身族的最愛！<p>（重量180+-10g)</p>", img: "原味雞胸.jpg" },
-            { id: 2, name: "匈牙利紅椒舒肥雞胸", category: "雞肉", price: 79, desc: "紅椒香氣撲鼻，微辣誘惑你的味蕾！🌶️ 舒肥雞胸，軟嫩到讓你心動！<p>（重量180+-10g)</p>", img: "匈牙利紅椒雞胸.jpg" },
-            { id: 3, name: "義式香料舒肥雞胸", category: "雞肉", price: 79, desc: "羅勒勾起的義式浪漫！🍃 雞胸嫩滑，彷彿置身托斯卡尼的午後！（重量180+-10g)", img: "義式香料舒肥雞胸.jpg" },
+            { id: 1, name: "原味舒肥雞胸", category: "雞肉", price: 69, desc: "鮮嫩多汁，雞胸界的溫柔小鮮肉！😋 簡單清爽，百搭萬能，健身族的最愛！<p>（重量180+-10g)</p>", img: "原味雞胸.jpg" },
+            { id: 2, name: "匈牙利紅椒舒肥雞胸", category: "雞肉", price: 69, desc: "紅椒香氣撲鼻，微辣誘惑你的味蕾！🌶️ 舒肥雞胸，軟嫩到讓你心動！<p>（重量180+-10g)</p>", img: "匈牙利紅椒雞胸.jpg" },
             { id: 4, name: "去骨油雞腿", category: "雞肉", price: 230, desc: "油亮誘人，入口即化的雞腿皇！😍 貼心去骨設計，輕鬆吃到吮指回味！<p>（重量600g)</p>", img: "去骨油雞腿.jpg" },
             { id: 5, name: "去骨醉雞腿", category: "雞肉", price: 230, desc: "酒香四溢，雞腿醉了你也醉了！🍷 貼心去骨設計，美味直接送到嘴邊！<p>（重量600g)</p>", img: "去骨醉雞腿.jpg" },
             { id: 6, name: "紅酒燉牛頰", category: "牛肉", price: 145, desc: "紅酒慢燉，牛頰軟爛如雲朵！🍇 濃郁香醇，浪漫晚餐的秘密武器！<p>（重量300g)</p>", img: "紅酒燉牛頰.jpg" },
